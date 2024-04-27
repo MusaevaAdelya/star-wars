@@ -24,4 +24,8 @@ const charactersSlice = createSlice({
 
 export const { setData, setIsError, setIsLoading } = charactersSlice.actions;
 
+export const getCharacters = (state) => state.characters.data;
+export const getIsError=(state)=>state.characters.isError;
+export const getIsLoading=(state)=>state.characters.isLoading;
+
 export default charactersSlice.reducer;
