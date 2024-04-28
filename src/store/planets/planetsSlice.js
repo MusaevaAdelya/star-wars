@@ -14,18 +14,18 @@ const planetsSlice = createSlice({
       state.data = action.payload;
     },
     setIsError: (state, action) => {
-      state.data = action.payload;
+      state.isError  = action.payload;
     },
     setIsLoading: (state, action) => {
-      state.data = action.payload;
+      state.isLoading  = action.payload;
     },
   },
 });
 
 export const { setData, setIsError, setIsLoading } = planetsSlice.actions;
 
-export const getPlanets = (state) => state.characters.data;
-export const getIsError=(state)=>state.characters.isError;
-export const getIsLoading=(state)=>state.characters.isLoading;
+export const getPlanets = (state) => state.planets.data;
+export const getIsError=(state)=>state.planets.isError;
+export const getIsLoading=(state)=>state.planets.isLoading;
 
 export default planetsSlice.reducer;

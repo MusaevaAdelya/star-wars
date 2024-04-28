@@ -13,7 +13,7 @@ import CardsSkeleton from "../../components/CardsSkeleton";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import CharacterCard from "../../components/CharacterCard";
 import extractNumberFromUrl from "../../services/extractNumberFromUrl";
-import useGetData from "../../hooks/useGetData";
+import useGetReduxData from "../../hooks/useGetReduxData";
 
 function Characters() {
   const data = useSelector(getCharacters);
@@ -24,7 +24,7 @@ function Characters() {
   const [searchParams] = useSearchParams();
   const page = searchParams.get("page");
 
-  useGetData(
+  useGetReduxData(
     `${process.env.REACT_APP_BASE_URL}/people?page=${page ? page : 1}`,
     setIsLoading,
     setData,
@@ -50,7 +50,7 @@ function Characters() {
       </div>
       <div className="flex flex-wrap justify-center my-16 gap-x-28 gap-y-20">
         {isLoading ? (
-          <CardsSkeleton qty={6} />
+          <CardsSkeleton qty={10} />
         ) : (
           <>
             {data &&

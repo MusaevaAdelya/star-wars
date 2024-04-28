@@ -2,15 +2,13 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 
-export const useGetData = (url, setIsLoading, setData, setIsError ) => {
+export const useGetReduxData = (url, setIsLoading, setData, setIsError) => {
   const dispatch = useDispatch();
-
-  console.log("url: "+url)
 
   useEffect(() => {
     dispatch(setIsLoading(true));
     axios
-      .get( url )
+      .get(url)
       .then((response) => {
         dispatch(setData(response.data));
       })
@@ -23,4 +21,4 @@ export const useGetData = (url, setIsLoading, setData, setIsError ) => {
   }, [dispatch, setData, setIsError, setIsLoading, url]);
 };
 
-export default useGetData;
+export default useGetReduxData;

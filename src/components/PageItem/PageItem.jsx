@@ -17,7 +17,7 @@ function PageItem({ title, image, color, link }) {
     <Link to={link}>
       <div
         className={
-          "relative overflow-hidden h-96 lg:h-[35rem] flex flex-col justify-end pb-10"
+          "relative overflow-hidden h-96 lg:h-[35rem] flex flex-col justify-end pb-10 max-w-[1200px] mx-auto"
         }
         style={{
           boxShadow: isHovered ? `0 0 50px 15px ${color}` : "none",
