@@ -14,6 +14,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import extractNumberFromUrl from "../../services/extractNumberFromUrl";
 import useGetReduxData from "../../hooks/useGetReduxData";
 import PlanetCard from "../../components/PlanetCard/PlanetCard";
+import { useEffect } from "react";
 
 function Planets() {
   const data = useSelector(getPlanets);
@@ -31,9 +32,11 @@ function Planets() {
     setIsError
   );
 
-  if (isError) {
-    navigate("/error");
-  }
+  useEffect(() => {
+    if (isError) {
+      navigate("/error");
+    }
+  }, [isError, navigate]);
 
   return (
     <div>

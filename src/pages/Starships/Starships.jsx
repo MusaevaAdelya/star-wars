@@ -15,6 +15,7 @@ import CharacterCard from "../../components/CharacterCard";
 import extractNumberFromUrl from "../../services/extractNumberFromUrl";
 import useGetReduxData from "../../hooks/useGetReduxData";
 import StarshipCard from "../../components/StarshipCard";
+import { useEffect } from "react";
 
 function Starships() {
   const data = useSelector(getStarships);
@@ -32,9 +33,11 @@ function Starships() {
     setIsError
   );
 
-  if (isError) {
-    navigate("/error");
-  }
+  useEffect(() => {
+    if (isError) {
+      navigate("/error");
+    }
+  }, [isError, navigate]);
 
   return (
     <div>

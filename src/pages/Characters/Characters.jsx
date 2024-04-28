@@ -14,6 +14,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import CharacterCard from "../../components/CharacterCard";
 import extractNumberFromUrl from "../../services/extractNumberFromUrl";
 import useGetReduxData from "../../hooks/useGetReduxData";
+import { useEffect } from "react";
 
 function Characters() {
   const data = useSelector(getCharacters);
@@ -30,10 +31,16 @@ function Characters() {
     setData,
     setIsError
   );
+  
 
-  if (isError) {
-    navigate("/error");
-  }
+  console.log("characters isError: ")
+  console.log(isError)
+
+  useEffect(() => {
+    if (isError) {
+      navigate("/error");
+    }
+  }, [isError, navigate]);
 
   return (
     <div>
