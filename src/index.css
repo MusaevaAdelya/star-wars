@@ -9,9 +9,11 @@
 }
 
 body {
-    background-image: url(../public/images/bg.jpg);
+    /* background-image: url(../public/images/bg.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: center; */
+    /* #121212 */
+    background-color: black;
     min-height: 100vh;
     font-family: "Poppins", sans-serif;
 }

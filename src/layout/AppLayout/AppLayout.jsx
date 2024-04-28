@@ -1,8 +1,10 @@
 import { Link, Outlet } from "react-router-dom";
+import BackgroundStars from "../../components/BackgroundStars";
 
 function AppLayout() {
   return (
-    <div>
+    <div className="relative overflow-hidden">
+      <BackgroundStars qty={500}/>
       <div className="container px-8 py-10 mx-auto lg:px-20">
         <Link to="/">
         <img
