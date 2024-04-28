@@ -23,7 +23,7 @@ function Starship() {
     <div>
       <GoBackButton />
 
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center mt-10">
         {isLoading && <InfoCardSkeleton/>}
 
         {!isLoading && !isError && data && (

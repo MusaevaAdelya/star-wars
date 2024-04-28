@@ -23,7 +23,7 @@ function Character() {
     <div>
       <GoBackButton />
 
-      <div className="flex flex-col items-center justify-center">
+      <div className="flex flex-col items-center justify-center mt-10">
         {isLoading && <InfoCardSkeleton />}
 
         {!isLoading && !isError && data && (
@@ -31,7 +31,7 @@ function Character() {
             title={data.fields.name}
             avatar={{
               size: "16rem",
-              variant: "ring",
+              variant: "beam",
               colors: ["#FFFF00", "#FFD700", "#FFEB3B", "#FBC02D", "#FFA000"],
             }}
             info={{
